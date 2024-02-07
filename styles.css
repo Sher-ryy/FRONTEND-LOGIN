@@ -81,6 +81,7 @@ nav a {
     text-align: center;
     margin: 0 auto;
     margin-left: -90%; 
+    
 }
 
 .login-box form {
@@ -144,4 +145,21 @@ nav a {
 }
 .login-box a {
     color: white;
+}
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    .logo img {
+        width: 30px; /* Reduzca el tamaño del logo para pantallas más pequeñas */
+    }
+
+    nav ul li {
+        margin-right: 10px; /* Ajusta el espaciado entre elementos de navegación */
+    }
+
+    /* Otros estilos específicos para pantallas pequeñas */
+}
+
+/* Media Query para pantallas medianas */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos específicos para pantallas medianas */
 }
