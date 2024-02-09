@@ -2,70 +2,80 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    align-items: center;
     height: 100vh;
     background-color: black;
     color: white; 
+    overflow: hidden; /* Evitar la barra de desplazamiento */
 }
+
 
 header {
+    display: flex;
     background-color: black;
     color: white;
-    padding: 10px;
-    width: 100%
-}
-
-.logo {
-    display: flex;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
 }
 
+.logo{
+    width: 300px;
+    margin: auto;
+    transform: translateX(50%);
+}
 .logo img {
-    width: 300;
-    margin-left: 200px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 300px;
+    margin: auto;
+    transform: translateX(50%);
 }
+
 nav {
     display: flex;
-    justify-content: center;
+    width: 100%; /* Establecer el tamaño del menú de navegación al 100% del ancho del header */
+    margin: auto;
+    align-items: center;
+
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    align-items: center;
 }
 
 nav ul li {
-    margin-left: 300px;
-    margin-top: -50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+
 }
 
 nav a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    margin-right: 10px; 
+    margin-left: 20px;
+    font-size: 18px;
+    display: flex;
 }
 
 .auth-buttons {
-    margin-left: auto; 
+    display: flex;
+    align-items: center;
+    margin-left: 28%;
+    margin-right: 2%;
 }
 
 .auth-buttons a {
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative; /* Añade posicionamiento relativo al contenedor */
 }
 
 .login-column {
@@ -76,12 +86,11 @@ nav a {
 
 .login-box {
     width: 300px; 
-    padding: 50px;
     border-radius: 5px;
     text-align: center;
-    margin: 0 auto;
-    margin-left: -90%; 
-    
+    transform: translateX(-100%);
+    margin: auto;
+    margin-top: -20%;
 }
 
 .login-box form {
