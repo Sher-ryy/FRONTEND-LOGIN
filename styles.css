@@ -1,11 +1,9 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     height: 100vh;
     background-color: black;
     color: white; 
-    overflow: hidden; /* Evitar la barra de desplazamiento */
 }
 
 
@@ -71,13 +69,23 @@ nav a {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
     height: 100vh;
-    position: relative; /* Añade posicionamiento relativo al contenedor */
-}
-
+    display: flex
+  }
+  
+  .login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin-left: center;
+    margin-right: center;
+  }
+  
+  .image-container {
+    width: 100vw;
+    height: 100vh;
+  }
 .login-column {
     display: flex;
     flex-direction: column;
@@ -88,9 +96,8 @@ nav a {
     width: 300px; 
     border-radius: 5px;
     text-align: center;
-    transform: translateX(-100%);
     margin: auto;
-    margin-top: -20%;
+
 }
 
 .login-box form {
