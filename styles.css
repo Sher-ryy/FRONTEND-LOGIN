@@ -3,17 +3,16 @@ body {
     margin: 0;
     height: 100vh;
     background-color: black;
-    color: white; 
+    color: white;
 }
 
-
 header {
+    max-width: 100vw; /* Establecer un ancho máximo */
     display: flex;
     background-color: transparent;
     color: white;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .logo{
@@ -25,7 +24,6 @@ header {
     width: 50px;
     margin: auto;
     transform: translateX(50%);
-    
 }
 
 nav {
@@ -33,7 +31,6 @@ nav {
     width: 100%; /* Establecer el tamaño del menú de navegación al 100% del ancho del header */
     margin: auto;
     align-items: center;
-
 }
 
 nav ul {
@@ -46,7 +43,6 @@ nav ul {
 nav ul li {
     display: flex;
     align-items: center;
-
 }
 
 nav a {
@@ -72,18 +68,18 @@ nav a {
     width: 100vw;
     height: 100vh;
     display: flex;
-  }
-  
-  .login-container {
+}
+
+.login-container {
     width: 100vw;
     height: 100vh;
     display: flex;
-    margin-left: center;
-    margin-right: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-    
-  
-  .container::before {
+
+.container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -92,24 +88,26 @@ nav a {
     height: 100%;
     background: radial-gradient(circle, #ffffff1f, #000000);
     z-index: -1; /* Coloca el gradiente detrás de los demás elementos del contenedor */
-  }
-  .image-container {
+}
+
+.image-container {
     width: 100vw;
     height: 100vh;
     background-image: url(imgs/FondoLOGIN.jpg);
-    background-size: cover;
+    background-size: cover; /* Ajustar la imagen para cubrir el contenedor */
+    background-size: relative;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     mix-blend-mode: lighten;
-  }
+}
+
 .login-column {
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
     width: fit-content;
-
 }
 
 .login-box {
@@ -117,8 +115,6 @@ nav a {
     border-radius: 5px;
     text-align: center;
     margin: auto;
-    width: fit-content;
-
 }
 
 .login-box form {
@@ -132,7 +128,6 @@ nav a {
     display: none;
 }
 
-
 .login-box input {
     border: none; 
     background: transparent; 
@@ -141,57 +136,58 @@ nav a {
     outline: none; 
     border-bottom: 1px solid #ccc; 
     color: white; 
-   
 }
 
 .login-box input[type="email"] {
     width: 350px;
-    margin-top: 50px
-
+    margin-top: 50px;
 }
 
 .login-box input[type="password"] {
     width: 350px;
-
 }
 
+.login-box input[type="submit"],
+.login-box input[type="button"] {
+    padding: 10px;
+    border-radius: 28px; 
+    cursor: pointer; 
+    width: 100%;
+}
 
 .login-box input[type="submit"] {
     background-color: #555; 
     color: rgb(0, 0, 0); 
-    padding: 10px;
     border: none; 
-    border-radius: 28px; 
-    cursor: pointer; 
-    width: 100%;
 }
 
 .login-box input[type="button"] {
     background-color: transparent;
     color: rgb(255, 217, 0); 
-    padding: 10px; 
     border: 1px solid rgb(255, 217, 0); 
-    border-radius: 28px; 
-    cursor: pointer; 
-    width: 100%;
     text-align: center;
 }
-
 
 .login-box input::placeholder {
     color: #ffffff; 
 }
+
 .login-box a {
     color: white;
+    display: block; /* Convertir el enlace en un bloque para aplicar alineación */
+    margin-top: 20px; /* Agregar un margen superior para separarlo del botón de registro */
+    text-align: center; /* Centrar el texto del enlace */
 }
+
+
 /* Media Query para pantallas pequeñas */
 @media only screen and (max-width: 600px) {
     .logo img {
-        width: 30px; /* Reduzca el tamaño del logo para pantallas más pequeñas */
+        width: 30px; /* Reducir el tamaño del logo para pantallas más pequeñas */
     }
 
     nav ul li {
-        margin-right: 10px; /* Ajusta el espaciado entre elementos de navegación */
+        margin-right: 10px; /* Ajustar el espaciado entre elementos de navegación */
     }
 
     /* Otros estilos específicos para pantallas pequeñas */
@@ -201,14 +197,3 @@ nav a {
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     /* Estilos específicos para pantallas medianas */
 }
-
-
-/* 
-Tamaños de pantalla:
-375px -> mobile
-768px -> ipad mini
-1024px -> iPad Pro
-1280px -> macbook air
-1440px -> macbook pro 13in
-1920px -> HD
-*/
