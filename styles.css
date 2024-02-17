@@ -13,6 +13,8 @@ header {
     color: white;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
 }
 
 .logo{
@@ -49,6 +51,7 @@ nav a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 20px;
+    margin-right: auto;
     font-size: 18px;
     display: flex;
 }
@@ -56,8 +59,8 @@ nav a {
 .auth-buttons {
     display: flex;
     align-items: center;
-    margin-left: 28%;
-    margin-right: 2%;
+    margin-left: auto;
+    margin-right: 40px;
 }
 
 .auth-buttons a {
@@ -68,6 +71,7 @@ nav a {
     width: 100vw;
     height: 100vh;
     display: flex;
+
 }
 
 .login-container {
@@ -86,7 +90,7 @@ nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, #ffffff1f, #000000);
+    background: radial-gradient(circle, #ffffff41, #000000);
     z-index: -1; /* Coloca el gradiente detrás de los demás elementos del contenedor */
 }
 
@@ -121,7 +125,8 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: fit-content;
+    width: 100%;
+    align-content: center;
 }
 
 .login-box label {
@@ -180,20 +185,133 @@ nav a {
 }
 
 
-/* Media Query para pantallas pequeñas */
-@media only screen and (max-width: 600px) {
-    .logo img {
-        width: 30px; /* Reducir el tamaño del logo para pantallas más pequeñas */
+/* Media Query para pantallas pequeñas (mobile) */
+@media only screen and (max-width: 375px) {
+    .logo {
+        width: 150px;
     }
 
     nav ul li {
-        margin-right: 10px; /* Ajustar el espaciado entre elementos de navegación */
+        margin-right: 10px;
     }
-
-    /* Otros estilos específicos para pantallas pequeñas */
 }
 
-/* Media Query para pantallas medianas */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    /* Estilos específicos para pantallas medianas */
+/* Media Query para pantallas medianas (iPad mini) */
+@media only screen and (min-width: 376px) and (max-width: 768px) {
+    .logo {
+        width: 180px;
+    }
+
+    nav ul li {
+        margin-right: 15px;
+    }
+}
+
+/* Media Query para pantallas medianas (iPad Pro) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .image-container {
+        position: relative;
+        width: 100vw; /* Ancho completo de la ventana */
+        height: 100vh; /* Alto completo de la ventana */
+        background-image: url(imgs/FondoLOGIN.jpg);
+        background-size: cover; /* Cubre toda la pantalla */
+        background-position: center center; /* Centra la imagen de fondo */
+        overflow: hidden; /* Para evitar que la imagen se desborde */
+    }
+
+    .image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo obscurecido */
+    }
+
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1; /* Asegura que el login box esté sobre el fondo */
+    }
+
+    footer {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        text-align: center;
+        z-index: 1; /* Asegura que el footer esté sobre el fondo */
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+}
+
+
+/* Media Query para pantallas grandes (MacBook Air) */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .logo {
+        width: 200px;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+}
+
+/* Media Query para pantallas grandes (MacBook Pro 13in) */
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+    .logo {
+        width: 220px;
+    }
+
+    nav ul li {
+        margin-right: 25px;
+    }
+}
+
+/* Media Query para pantallas extra grandes (HD) */
+@media only screen and (min-width: 1441px) {
+    .logo {
+        width: 250px;
+    }
+
+    nav ul li {
+        margin-right: 30px;
+    }
+}
+
+/* Media Query para pantallas medianas (iPad Pro en horizontal y MacBook Air) */
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+    .image-container {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-image: url(imgs/FondoLOGIN.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .login-container {
+        width: 400px;
+    }
+}
+
+/* Ocultar el footer en pantallas que no son similares al iPad Pro */
+@media only screen and (max-width: 768px), (min-width: 1025px) {
+    footer {
+        display: none;
+    }
 }
