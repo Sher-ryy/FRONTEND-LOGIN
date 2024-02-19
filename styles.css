@@ -205,7 +205,88 @@ nav a {
     nav ul li {
         margin-right: 15px;
     }
-}
+    .image-container {
+        position: relative;
+        width: 100vw; /* Ancho completo de la ventana */
+        height: 100vh; /* Alto completo de la ventana */
+        background-image: url(imgs/FondoLOGIN.jpg);
+        background-size: cover; /* Cubre toda la pantalla */
+        background-position: center center; /* Centra la imagen de fondo */
+        overflow: hidden; /* Para evitar que la imagen se desborde */
+    }
+
+    .image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo obscurecido */
+    }
+
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1; /* Asegura que el login box esté sobre el fondo */
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        padding: 20px 0; /* Aumenta el espacio de relleno superior e inferior */
+        text-align: center;
+    }
+    
+    footer::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: white; /* Color de la línea superior */
+        margin-bottom: 10px; /* Espacio entre la línea y el contenido */
+    }
+    
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    footer .social-icons a {
+        display: inline-block;
+        width: 20px; /* Ancho de los iconos */
+        height: 20px; /* Altura de los iconos */
+        background-color: white; /* Color de fondo de los iconos */
+        border-radius: 50%; /* Forma circular para los iconos */
+        line-height: 40px; /* Centra los iconos verticalmente */
+        font-size: 20px; /* Tamaño del ícono */
+        color: black; /* Color del ícono */
+        margin: 0 10px; /* Espacio entre los iconos */
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    
+    footer p {
+        margin: 10px 0;
+        color: white;
+        font-size: 14px;
+    }
+   .a fa-instagram{
+    
+   }
+    
+
 
 /* Media Query para pantallas medianas (iPad Pro) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -257,19 +338,45 @@ nav a {
         text-decoration: none;
         font-size: 20px;
     }
+    footer .social-icons a {
+        display: inline-block;
+        width: 10px; /* Reducimos el ancho de los iconos */
+        height: 10px; /* Reducimos la altura de los iconos */
+        background-color: white;
+        border-radius: 50%;
+        line-height: 10px;
+        font-size: 5px; /* Reducimos el tamaño del icono */
+        color: black;
+        margin: 0 10px;
+    }
+    
 }
 
 
-/* Media Query para pantallas grandes (MacBook Air) */
 @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-    .logo {
-        width: 200px;
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    nav ul li {
-        margin-right: 20px;
+    .login-container {
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1;
     }
+
+    .image-container {
+        width: 50%;
+        height: 100vh;
+        background-size: cover; /* Ajustar la imagen para cubrir el contenedor */
+
 }
+
 
 /* Media Query para pantallas grandes (MacBook Pro 13in) */
 @media only screen and (min-width: 1281px) and (max-width: 1440px) {
@@ -303,10 +410,6 @@ nav a {
         background-size: cover;
         background-position: center;
     }
-
-    .login-container {
-        width: 400px;
-    }
 }
 
 /* Ocultar el footer en pantallas que no son similares al iPad Pro */
@@ -314,4 +417,6 @@ nav a {
     footer {
         display: none;
     }
+}
+}
 }
