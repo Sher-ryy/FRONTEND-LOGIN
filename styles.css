@@ -282,11 +282,18 @@ nav a {
         color: white;
         font-size: 14px;
     }
-   .a fa-instagram{
-    
-   }
-    
 
+    .social-icon.facebook {
+        background-image: url('imgs/fbLOGO.png');
+    }
+    
+    .social-icon.twitter {
+        background-image: url('twitter-icon.png');
+    }
+    
+    .social-icon.instagram {
+        background-image: url('instagram-icon.png');
+    }
 
 /* Media Query para pantallas medianas (iPad Pro) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
